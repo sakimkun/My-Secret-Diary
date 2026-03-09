@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secret Dairy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Clouds --> 
+    <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <!-- Dinosaur Animation -->
+    <div class="dinosaur-container">
+        <div class="dinosaur">🦕</div>
+    </div>
+
+    <!-- Login Button -->
+    <div class="login-container">
+        <button id="loginBtn" class="login-btn">
+            <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google" class="google-icon">
+            <span>Login with Gmail</span>
+        </button>
+        <div id="userProfile" class="user-profile" style="display: none;">
+            <img id="userAvatar" src="" alt="User" class="user-avatar">
+            <span id="userName">User</span>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="header">
+            <h1>📝 𝓜𝔂 𝓢𝓮𝓬𝓻𝓮𝓽 𝓓𝓲𝓪𝓻𝔂</h1>
+            <p class="subtitle">Littel Monster 🦖</p>
+        </div>
+
+        <div class="note-container">
+            <textarea 
+                id="noteInput" 
+                placeholder="Write your thoughts here... ✨"
+                class="note-textarea"
+            ></textarea>
+            
+            <div class="button-group">
+                <button id="saveBtn" class="save-btn">💾 Save Note</button>
+                <button id="clearBtn" class="clear-btn">🗑️ Clear</button>
+            </div>
+        </div>
+
+        <!-- Saved Notes Section -->
+        <div class="saved-notes">
+            <h2>📚 Saved Notes</h2>
+            <div id="notesList" class="notes-list"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

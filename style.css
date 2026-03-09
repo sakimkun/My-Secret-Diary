@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Clouds Animation */
+.clouds-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 10%;
+    left: -100px;
+    animation-duration: 25s;
+}
+
+.cloud-2 {
+    width: 150px;
+    height: 60px;
+    top: 30%;
+    left: -150px;
+    animation-duration: 35s;
+    animation-delay: 5s;
+}
+
+.cloud-3 {
+    width: 80px;
+    height: 30px;
+    top: 50%;
+    left: -80px;
+    animation-duration: 30s;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(110vw); }
+}
+
+/* Dinosaur Animation */
+.dinosaur-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.dinosaur {
+    font-size: 50px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Login Section */
+.login-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #333;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #FFB6C1;
+}
+
+.logout-btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 15px;
+    background: #FF6B6B;
+    color: white;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #5A67D8;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Note Input */
+.note-container {
+    margin-bottom: 30px;
+}
+
+.note-textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid #E0E7FF;
+    border-radius: 20px;
+    background: #F8F9FF;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.note-textarea:focus {
+    border-color: #87CEEB;
+    box-shadow: 0 0 15px rgba(135, 206, 235, 0.3);
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.save-btn, .clear-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background: linear-gradient(135deg, #87CEEB, #FFB6C1);
+    color: white;
+}
+
+.clear-btn {
+    background: #E0E7FF;
+    color: #5A67D8;
+}
+
+.save-btn:hover, .clear-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Saved Notes */
+.saved-notes {
+    margin-top: 40px;
+}
+
+.saved-notes h2 {
+    color: #5A67D8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid #87CEEB;
+    transition: all 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.note-card p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.note-card .timestamp {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.note-card .delete-btn {
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 80px 15px 30px;
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .note-textarea {
+        height: 150px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .dinosaur-container {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .dinosaur {
+        font-size: 35px;
+    }
+}
+
+/* Twinkle Effect */
+.twinkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
